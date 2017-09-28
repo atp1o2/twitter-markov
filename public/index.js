@@ -1,6 +1,6 @@
-const getUserTweets = (screen_name, callback) => {
+const getUserTweets = (query, callback) => {
   var data = {
-    screen_name: screen_name,
+    screen_name: query.screen_name,
     exclude_replies: true,
     count: 50,
   };
@@ -18,4 +18,10 @@ const getUserTweets = (screen_name, callback) => {
   })
 };
 
-// getUserTweets("barackobama");
+const handleGetTweetsButton = (e) => {
+  var query = {};
+  $.each($("#twitterUsernameForm").serializeArray(), (i, field) => {
+    query[field.name] = field.value;
+  })
+  getUserTweets(query);
+}
