@@ -2,6 +2,8 @@ class TwitterMarkov {
   constructor (screen_name, tweets) {
     this.screen_name = screen_name;
     this.tweets = tweets;
+    this.tweetChains = {};
+    this.tweet_id = 0;
     this.startWords = [];
     this.endWords = [];
     this.wordStats = {};
@@ -51,7 +53,12 @@ class TwitterMarkov {
     }
     // append random endWord
     markovChain + ` ${randomArrayElement(this.endWords)}`;
-    console.log(markovChain);
+
+    // save to sessionStorage
+    this.tweet_id++
+    this.tweetChains[this.tweet_id] = markovChain;
+    sessionStorage.setItem(this.screen_name, JSON.stringify(this.tweetChains));
+
     return markovChain;
   }
 }

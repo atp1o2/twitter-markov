@@ -6,9 +6,9 @@ const parseTweets = (statusesArr) => {
   return tweets;
 };
 
-
-const appendText = (text) => {
-  // append tweet to target div on html
+const appendTweet = (handle, text) => {
+  $("#newTweet").text(text);
+  $("#twitterHandle").text(handle);
 };
 
 const checkElementInArray = (element, arr) => {
@@ -18,4 +18,3 @@ const checkElementInArray = (element, arr) => {
 const randomArrayElement = (arr) => {
   return arr[Math.floor(arr.length * Math.random())];
 };
-
