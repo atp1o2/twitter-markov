@@ -1,3 +1,5 @@
+var tweeters = {};
+
 const getUserTweets = (query, callback) => {
   var data = {
     screen_name: query.screen_name,
@@ -10,8 +12,9 @@ const getUserTweets = (query, callback) => {
     data: data,
   })
   .done((response) => {
-    // callback(response);
-    console.log(response);
+    var tweets = parseTweets(response);
+    // console.log(data.screen_name, tweets);
+    callback(data.screen_name, tweets);
   })
   .fail((error) => {
     console.log("Error: ", error);
@@ -23,5 +26,13 @@ const handleGetTweetsButton = (e) => {
   $.each($("#twitterUsernameForm").serializeArray(), (i, field) => {
     query[field.name] = field.value;
   })
-  getUserTweets(query);
+
+
+  getUserTweets(query, (screen_name, tweets) => {
+    var user1 = new TwitterMarkov(screen_name, tweets);
+    // user1.generateChain()
+    // use appendText helper method
+    console.log(user1)
+  });
 }
+
