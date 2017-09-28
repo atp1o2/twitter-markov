@@ -1,0 +1,24 @@
+{
+  "name": "twitter-markov",
+  "version": "1.0.0",
+  "description": "Markov Chain Tweet Generator",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atp1o2/twitter-markov.git"
+  },
+  "author": "atp1o2",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/atp1o2/twitter-markov/issues"
+  },
+  "homepage": "https://github.com/atp1o2/twitter-markov#readme",
+  "dependencies": {
+    "express": "^4.15.5",
+    "require": "^2.4.20",
+    "twit": "^2.2.9"
+  }
+}
