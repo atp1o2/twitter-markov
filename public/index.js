@@ -30,9 +30,8 @@ const handleGetTweetsButton = (e) => {
 
   getUserTweets(query, (screen_name, tweets) => {
     var user1 = new TwitterMarkov(screen_name, tweets);
-    // user1.generateChain()
+    user1.generateMarkovTweet();
     // use appendText helper method
-    console.log(user1)
   });
 }
 
