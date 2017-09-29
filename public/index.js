@@ -2,6 +2,7 @@ class StateManager {
   constructor () {
     this.twitterUser = {};
     this.markovInstance = null;
+    this.error = null;
   }
 
   getUserTweets (query, callback) {
@@ -16,11 +17,14 @@ class StateManager {
       data: data,
     })
     .done((response) => {
+      if (response.errors) {
+        alert(response.errors[0].message);
+      }
       var tweets = parseTweets(response);
       callback(data.screen_name, tweets);
     })
     .fail((error) => {
-      console.log("Error: ", error);
+      console.log("Error", error);
     })
   }
 

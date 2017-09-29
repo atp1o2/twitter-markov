@@ -12,17 +12,25 @@
 
   <link rel="stylesheet" type="text/css" href="./styles.css">
 </head>
-<body>
+<body class="container text-center">
   <header>
     <h1>Twitter Markov Chain Generator</h1>
   </header>
   <div>
     <form id="twitterUsernameForm">
-    <label for="twitterUsername">Twitter Handle</label>
-    <input id="twitterUsername" name="screen_name">
-  </form>
+      <label for="twitterUsername" class="display-blockx">
+        <p class="h4 bold">Twitter Handle</p>
+        <input id="twitterUsername" class="t-handle-input display-block center" name="screen_name" placeholder="ex. realDonaldTrump" onfocus="this.placeholder = ''" />
+      </label>
+    </form>
 
-    <button onclick="handleGetTweetsButton()">Get Tweets</button>
+
+    <div class="markovTweet-container center mt-2">
+      <p id="twitterHandle" class="bold">&emsp;</p>
+      <hr />
+      <p id="newTweet"></p>
+    </div>
+    <button class="twitter-button mt-2" onclick="stateManager.handleGetTweetsButton()">Create a Tweet!</button>
   </div>
 </body>
 </html>

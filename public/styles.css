@@ -1,0 +1,41 @@
+/** { border: 1px solid red; }*/
+
+.container {
+  padding: 4em;
+  font-family: Arial;
+}
+
+.twitter-button {
+  background-color: #62A9E0;
+  border-radius: 100px;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 6px 16px;
+  line-height: 20px;
+  text-align: center;
+  white-space: nowrap;
+  color: #fff;
+  border: transparent;
+  font-size: 16px;
+}
+
+.t-handle-input {
+  padding: 0.5em;
+  width: 80%;
+  text-align: center;
+  font-size: 2em;
+}
+
+.markovTweet-container {
+  border: 1px solid gray;
+  height: 8em;
+  width: 50%;
+}
+
+.display-block { display: block; }
+.text-center { text-align: center; }
+.center { margin: 0 auto; }
+.bold { font-weight: bold; }
+.h3 { font-size: 1.17rem; }
+.h4 { font-size: 1.12rem; }
+.mt-2 { margin-top: 2em !important; }
