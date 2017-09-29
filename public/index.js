@@ -9,7 +9,7 @@ class StateManager {
     var data = {
       screen_name: query.screen_name,
       exclude_replies: true,
-      count: 50,
+      count: 100,
     };
     $.ajax({
       url: "http://localhost:3000/statuses/user_timeline",
